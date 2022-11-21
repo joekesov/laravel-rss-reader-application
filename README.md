@@ -1,4 +1,4 @@
-# github.com/joekesov/laravel-rss-reader-app
+# github.com/joekesov/laravel-rss-reader-application
 
 ## Install and run the RSS reader application
 
@@ -13,17 +13,42 @@ docker compose up -d --build
 ```shell
 docker compose exec server bash
 ```
-- 
-- php artisan migrate
-- yarn
-- yarn dev
+
+```angular2html
+composer install
+```
+
+```shell
+php artisan key:generate
+```
+
+```shell
+php artisan migrate
+```
+
 
 
 ========================
 
 ### Install laravel
 
+```shell
+composer create-project --prefer-dist laravel/laravel:^9.0 .
+```
 
-ssh-keygen -t ed25519 -C "joekesov@gmail.com"
+```shell
+composer require laravel/ui
+```
 
-id_ssh_joekesgit
+php artisan ui bootstrap --auth
+
+npm install
+
+npm run build
+
+
+==========================
+
+php artisan make:migration create_rss_urls_table --create=rss_urls
+
+php artisan make:controller RssUrlController --resource --model=RssUrl
