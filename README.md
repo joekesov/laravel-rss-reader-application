@@ -45,3 +45,10 @@ php artisan ui bootstrap --auth
 npm install
 
 npm run build
+
+
+==========================
+
+php artisan make:migration create_rss_urls_table --create=rss_urls
+
+php artisan make:controller RssUrlController --resource --model=RssUrl
