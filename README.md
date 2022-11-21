@@ -1,4 +1,4 @@
-# github.com/joekesov/laravel-rss-reader-app
+# github.com/joekesov/laravel-rss-reader-application
 
 ## Install and run the RSS reader application
 
@@ -23,7 +23,10 @@ docker compose exec server bash
 
 ### Install laravel
 
+```shell
+composer create-project --prefer-dist laravel/laravel:^9.0 .
+```
 
-ssh-keygen -t ed25519 -C "joekesov@gmail.com"
-
-id_ssh_joekesgit
+```shell
+composer require laravel/ui
+```
