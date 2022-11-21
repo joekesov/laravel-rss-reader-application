@@ -13,10 +13,19 @@ docker compose up -d --build
 ```shell
 docker compose exec server bash
 ```
-- 
-- php artisan migrate
-- yarn
-- yarn dev
+
+```angular2html
+composer install
+```
+
+```shell
+php artisan key:generate
+```
+
+```shell
+php artisan migrate
+```
+
 
 
 ========================
@@ -30,3 +39,9 @@ composer create-project --prefer-dist laravel/laravel:^9.0 .
 ```shell
 composer require laravel/ui
 ```
+
+php artisan ui bootstrap --auth
+
+npm install
+
+npm run build
