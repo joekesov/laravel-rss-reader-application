@@ -23,7 +23,7 @@
                     </div>
                     <div class="card-body">
                         <table class="table table-bordered">
-                            <tr>
+                            <tr  class="table-primary">
                                 <th>ID</th>
                                 <th>Name</th>
                                 <th>Url</th>
@@ -53,7 +53,7 @@
 
                             @else
                                 <tr>
-                                    <td colspan="5" class="text-center">No Data Found</td>
+                                    <td colspan="4" class="text-center">No Data Found</td>
                                 </tr>
                             @endif
                         </table>
