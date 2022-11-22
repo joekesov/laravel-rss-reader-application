@@ -14,11 +14,32 @@
                         </div>
                     </div>
                     <div class="card-body">
+                        <form class="form-inline" method="GET">
+                            <div class="row mb-3">
+                                <label class="col-sm-1 col-label-form">Filter:</label>
+                                <div class="col-sm-2">
+
+                                    <select name="filter_type" class="form-select" aria-label="Default select example">
+                                        @foreach ($filterTypes as $ftype)
+                                            <option value="{{ $ftype }}" @selected($filterType == $ftype)>
+                                                {{ $ftype }}
+                                            </option>
+                                        @endforeach
+                                    </select>
+
+                                </div>
+
+                                <div class="col-sm-5">
+                                    <input type="text" name="filter" class="form-control" placeholder="Post title..." value="{{$filter}}" />
+                                </div>
+                                <button type="submit" class="col-sm-1 btn btn-primary mb-2">Filter</button>
+                            </div>
+                        </form>
+
                         <table class="table table-bordered table-hover">
                             <thead>
-                            <th>ID</th>
+                            <th class="col-sm-1">ID</th>
                             <th>Title</th>
-                            <th>Actions</th>
                             </thead>
                             <tbody>
                             @if ($data->count() == 0)
@@ -30,19 +51,12 @@
                             @foreach ($data as $post)
                                 <tr>
                                     <td>{{ $post->id }}</td>
-                                    <td>{{ $post->title }}</td>
-                                    <td>
-                                        <form style="display:inline-block" action="" method="POST">
-                                            @method('DELETE')
-                                            @csrf
-                                            <button class="btn btn-sm btn-danger"> Delete</button>
-                                        </form>
-                                    </td>
+                                    <td><a href="{{ $post->link }}" target="_blank">{{ $post->title }}</a></td>
                                 </tr>
                             @endforeach
                             </tbody>
                         </table>
-                        {!! $data->links() !!}
+                        {!! $data->appends(Request::except('page'))->render() !!}
                     </div>
                 </div>
 

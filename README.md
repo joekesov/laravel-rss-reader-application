@@ -57,3 +57,7 @@ php artisan make:controller PostController --resource --model=Post
 
 php artisan make:seeder PostSeeder
 php artisan make:factory PostFactory
+
+php artisan vendor:publish --provider="Kyslik\ColumnSortable\ColumnSortableServiceProvider" --tag="config"
+
+composer remove kyslik/column-sortable
