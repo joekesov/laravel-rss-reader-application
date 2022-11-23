@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Jobs\PingJob;
 use App\Models\Post;
 use Illuminate\Http\Request;
 
@@ -53,6 +54,11 @@ class PostController extends Controller
 
         return view('post.index', compact('data', 'filter', 'filterTypes', 'filterType'));
 
+    }
+
+    public function fetch()
+    {
+        PingJob::dispatch();
     }
 
     /**

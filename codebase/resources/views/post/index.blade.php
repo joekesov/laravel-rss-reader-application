@@ -9,7 +9,7 @@
                         <div class="row">
                             <div class="col col-md-6"><b>Posts</b></div>
                             <div class="col col-md-6">
-                                <a href="{{ route('urls.create') }}" class="btn btn-success btn-sm float-end">Fetch last post</a>
+                                <a href="{{ route('fetch') }}" class="btn btn-success btn-sm float-end">Fetch last post</a>
                             </div>
                         </div>
                     </div>

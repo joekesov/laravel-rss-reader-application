@@ -24,7 +24,8 @@ Auth::routes();
 //Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::resource('urls', RssUrlController::class);
-
 Route::resource('posts', PostController::class)->only([
-    'index', 'show'
+    'index',
 ]);
+
+Route::get('/posts/fetch', [PostController::class, 'fetch'])->name('fetch');

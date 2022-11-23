@@ -1,6 +1,9 @@
 version: '3.9'
 
 networks:
+  shared:
+    external:
+      name: shared
   laravel_rss_reader_app_net:
 
 services:
@@ -23,6 +26,7 @@ services:
         condition: service_healthy
     networks:
       - laravel_rss_reader_app_net
+      - shared
 
   db_server:
     image: mariadb:10.5.9
