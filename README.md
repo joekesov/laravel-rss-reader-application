@@ -2,13 +2,16 @@
 
 ## Install and run the RSS reader application
 
-1. build and run the containers
+1. From .env.example file create a new .env file and choose the port number for the REST API
+- make the same action for codebase/.env from codebase/.env.example it's for the Laravel configuration
+
+2. build and run the containers
 
 ```shell
 docker compose up -d --build
 ```
 
-2. In the application server shell
+3. In the application server shell
 
 ```shell
 docker compose exec server bash
@@ -25,39 +28,16 @@ php artisan key:generate
 ```shell
 php artisan migrate
 ```
-
-
-
-========================
-
-### Install laravel
-
 ```shell
-composer create-project --prefer-dist laravel/laravel:^9.0 .
-```
-
-```shell
-composer require laravel/ui
-```
-
-php artisan ui bootstrap --auth
-
 npm install
+```
 
+```shell
 npm run build
+```
 
+4. Check in any browser if the below url is working. And if so you could manage some RSS data.
 
-==========================
-
-php artisan make:migration create_rss_urls_table --create=rss_urls
-php artisan make:controller RssUrlController --resource --model=RssUrl
-
-php artisan make:migration create_posts_table --create=posts
-php artisan make:controller PostController --resource --model=Post
-
-php artisan make:seeder PostSeeder
-php artisan make:factory PostFactory
-
-php artisan vendor:publish --provider="Kyslik\ColumnSortable\ColumnSortableServiceProvider" --tag="config"
-
-composer remove kyslik/column-sortable
+```
+http://localhost:8101/
+```

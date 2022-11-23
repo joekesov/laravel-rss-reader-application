@@ -84,8 +84,8 @@ class RssUrlController extends Controller
     public function update(Request $request, RssUrl $url)
     {
         $request->validate([
-            'rss_name'      =>  'required',
-            'url'     =>  'required|url',
+            'rss_name' =>  'required',
+            'url'      =>  'required|url',
         ]);
 
         $url = RssUrl::find($request->hidden_id);

@@ -15,13 +15,7 @@ use App\Http\Controllers\PostController;
 |
 */
 
-Route::get('/', [App\Http\Controllers\RssUrlController::class, 'index'])->name('home');
-
 Auth::routes();
-
-
-
-//Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::resource('urls', RssUrlController::class);
 
